@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='master.css') }}">
+
+
+</head>
+
+
+<body>
+<header>
+
+
+    <div class="container">
+        <strong>
+            <nav>
+                <ul class="menu">
+
+                    <span class="button_cont" align="center"><a class="example_e" href="{{ url_for('home') }}"
+                                                                target="_self" rel="nofollow noopener">Home</a></span>
+
+                    {% if 'logged_in_user' in session %}
+                    
+                    <span class="button_cont" align="center"><a class="example_e" href="{{ url_for('account') }}"
+                        target="_self" rel="nofollow noopener">My account</a></span> 
+                        
+                    {% else %}
+
+                    <span class="button_cont" align="center"><a class="example_e" href="{{ url_for('create_account') }}"
+                                                                target="_self" rel="nofollow noopener">My account</a></span>                    
+                        
+                    {% endif %}
+                                                                
+                    {% if 'logged_in_user' in session %}
+                    <span class="button_cont" align="center"><a class="example_e" href="{{ url_for('logout') }}"
+                                                                target="_self"
+                                                                rel="nofollow noopener">Logout</a></span>
+                    {% else %}
+                    <span class="button_cont" align="center"><a class="example_e" href="{{ url_for('create_account') }}"
+                                                                target="_self"
+                                                                rel="nofollow noopener">Create account/Login</a></span>
+                    {% endif %}
+
+
+                </ul>
+            </nav>
+        </strong>
+    </div>
+</header>
+
+
+<footer>
+
+
+</footer>
+
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

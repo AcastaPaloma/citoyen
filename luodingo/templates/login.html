@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+{% extends "master.html" %}
+{% block content %}
+
+<div style="color:red">{{error_message}}</div>
+
+
+
+
+<form class="login" method="post">
+    <div class="login__field">
+        <input type="text" class="login__input" name="email" placeholder="Email">
+    </div>
+    <div class="login__field">
+        <input type="password" class="login__input" name="password" placeholder="Password">
+    </div>
+    <button class="button login__submit">
+    </button>
+
+</form>
+
+{% endblock %}
+
+</body>
+</html>

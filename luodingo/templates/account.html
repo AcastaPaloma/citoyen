@@ -10,11 +10,12 @@
 {% extends "master.html" %}
 {% block content %}
 
-<form action="/action_page" role="form" method="post" id="reused_form" enctype="multipart/form-data">
+
+<form action="/account_update" role="form" method="post" id="reused_form" enctype="multipart/form-data">
 
 
     <label for="full_name"><b>Full name</b></label>
-    <input type="text" placeholder="Enter first and last name" name="full_name" id="full_name" required><br><br>
+    <input type="text" placeholder={{full_name}} name="full_name" id="full_name" required><br><br>
 
     <label for="level"><b>German proficiency level</b></label><br>
      <input type="radio" id="just_started" name="proficiency" value="just_started">Just started</input><br>
@@ -30,22 +31,21 @@
     <input type="radio" id="high_intermediate" name="proficiency" value="high_intermediate">I could survive in Germany</input><br><br>
     
     <label for="age"><b>Age</b></label><br>
-    <input type="text" placeholder="" name="age" id="age" required><br><br>
+    <input type="text" placeholder="{{age}}" name="age" id="age" required><br><br>
 
-    <label for="email"><b>Email</b></label><br>
-    <input type="email" placeholder="Enter email" name="email" id="email" required><br><br>
 
     <label for="password"><b>Password</b></label><br>
-    <input type="password" placeholder="Enter password" name="password" id="password" required><br><br>
+    <input type="password" placeholder="{{password}}" name="password" id="password" required><br><br>
 
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Update</button>
 
 
 
 </form>
 
-<a href="/login">Sign in</a>
+
+</body>
 
 {% endblock %}
 </body>
